@@ -1,0 +1,60 @@
+{
+	"id": "meeting",
+    "type": "object",
+    "properties": {
+    	"id": {
+            "type": "number",
+            "minimum": 1,
+			"required": true
+        },
+		"name": {
+			"type": "string",
+			"required": true
+		},
+        "project": {
+            "type": "string",
+            "required": true
+        },
+        "date": {
+            "type": "string"
+        },
+		"statusCode": {
+           	"enum": [ "NEW", "IN_PROGRESS", "READY", "CLOSED" ],
+           	"required": true
+		},
+        "owner": {
+            "type": "string"
+        },
+        "buyer": {
+            "type": "string"
+        },
+        "assistantBuyer": {
+            "type": "string"
+        },
+        "shotCounts": {
+            "type": "object",
+            "properties": {
+                "pageForecast": {
+                   	"type": "number",
+                   	"minimum": 0
+                 },
+                "pageCurrent": {
+                   	"type": "number",
+                   	"minimum": 0
+                 },
+                "onFig": {
+                   	"type": "number",
+                   	"minimum": 0
+                 },
+                "flat": {
+                   	"type": "number",
+                   	"minimum": 0
+                 },
+                "imageTeam": {
+                   	"type": "number",
+                   	"minimum": 0
+                 }
+            }
+        }
+    }
+}

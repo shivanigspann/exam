@@ -1,0 +1,83 @@
+.jqx-grid-column-header {
+	font-weight: bold;
+}
+
+.jqx-grid-column-header {
+	background-color: #4C4B4C;
+	color: #FFFEFE;
+}
+
+.jqx-grid-columngroup-header {
+	background-color: #810009;
+	color: #FFFEFE;
+}
+
+.aggregate-cell-column-header {
+	height: 50px;
+	background-color: #F7D5DE;
+	color: #000000;
+}
+
+.jqx-grid-statusbar {
+	
+}
+
+.jqx-expander-header {
+	background-color: #FFFEFE;
+	color: #000000;
+	font-weight: bold;
+}
+
+#projectslist .jqx-grid-column-header {
+	background-color: #E6E6E6;
+	color: #000000;
+}
+
+#meetingsgrid .jqx-grid-cell-pinned {
+	background-color: #4C4B4C;
+	color: #FFFEFE;
+	padding-top: 2px;
+	margin-right: 2px;
+	text-align: right;
+}
+
+#statusrowmeetingsgrid {
+	
+}
+
+#statusrowmeetingsgrid .jqx-grid-cell {
+	
+}
+
+#statusrowmeetingsgrid .aggregate-cell {
+	background-color: #810009;
+	color: #FFFEFE;
+}
+
+.numeric-value SPAN {
+	margin-right: 2px;
+}
+
+.action-icon {
+	margin-top: 4px;
+	margin-bottom: 4px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+#meeting-new {
+	font-size: medium;
+	background-color: #0E74DD;
+	color: #FFFEFE;
+	margin-bottom: 6px;
+}
+
+.navigation-cell {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-bottom: 2px;
+	text-align: left;
+	margin-right: 2px;
+	margin-left: 4px;
+	margin-top: 4px;
+}
