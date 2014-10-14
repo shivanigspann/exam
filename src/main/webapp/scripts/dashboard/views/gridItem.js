@@ -57,10 +57,13 @@ define([
 				var row = {};
 				row.id = item.get('id');
 				row.name = item.get('name');
-				row.project = item.get('project');
+				var project = item.get('project');
+				if (project) {
+					row.project = project.get('id');
+				}
 				row.date = item.get('date');
 				row.statusCode = item.get('statusCode');
-				row.owner = "me";
+				row.owner = item.get('owner');
 				row.buyer = item.get('buyer');
 				row.assistantBuyer = item.get('assistantBuyer');
 				var counts = item.get('shotCounts');
@@ -125,7 +128,7 @@ define([
 			        // values.value - specifies the field's value in the foreign source. 
 			        // values.name - specifies the field's name in the foreign source.
 			        { name: 'id', type: 'int' },
-			        { name: 'project', type: 'string' },
+			        { name: 'project', type: 'int' },
 			        { name: 'name', type: 'string' },
 			        { name: 'date', type: 'date' },  // , format: "yyyy-MM-ddTHH:mm:ss-HH:mm"
 			        { name: 'statusCode', type: 'statusCode' },
@@ -166,8 +169,19 @@ define([
 
 		        source: dataAdapter,
 		        columns: [
-		   	    	{ text: 'Project', datafield: 'project', filterable: true, width: '6%', align: 'center', cellsalign: 'left' },
-			    	{ text: 'Name', datafield: 'name', filterable: true, width: '8%', align: 'center', cellsalign: 'left',
+		   	    	{ text: 'Project', datafield: 'project', filterable: true, width: '6%', align: 'center', cellsalign: 'left',
+			    		cellsrenderer: function(row, datafield, value, defaulthtml, columnproperties) {
+			    			// NOTE: jquery uses innerHTML for $.html() so we
+			    			// construct a dummy node and use that as the parent
+			    			// for the default html
+			    			var element = $(defaulthtml);
+			    			element.text('PRJ' + value);
+			    			var dummy = $('<div></div>');
+			    			dummy.append(element);
+			    			return dummy.html();
+			    		}
+		   	    	},
+			    	{ text: 'Name', datafield: 'name', filterable: true, width: '9%', align: 'center', cellsalign: 'left',
 			    		cellsrenderer: function(row, datafield, value, defaulthtml, columnproperties) {
 			    			// NOTE: jquery uses innerHTML for $.html() so we
 			    			// construct a dummy node and use that as the parent
@@ -184,31 +198,9 @@ define([
 		   	    	},
 			    	{ text: 'Date/Time', datafield: 'date', filterable: false, width: '8%', align: 'center', cellsalign: 'left', cellsformat: 'MM/dd hh:mm' },
 			    	{ text: 'Status', datafield: 'statusCode', displayfield: 'status', filterable: true, width: '6%', align: 'center', cellsalign: 'left' },
-			    	{ text: 'Owner', datafield: 'owner', filterable: true, width: '6%', align: 'center', cellsalign: 'left' },
 			    	{ text: 'Buyer', datafield: 'buyer', filterable: true, width: '12%', align: 'center', cellsalign: 'left' },
 			    	{ text: 'Assistant Buyer', datafield: 'assistantBuyer', filterable: true, width: '12%', align: 'center', cellsalign: 'left' },
-			    	{ text: 'Forecast', columngroup: 'forecastCounts', datafield: 'forecastPageCount', filterable: false, width: '7%', align: 'center', classname: 'aggregate-cell-column-header', cellsalign: 'right',
-			    		// HACK to render aggregate value in the column header
-			    		// * column group hierarchy specifies the header cells
-			    		// * custom header renderer replaces the HTML with a container to hold the aggregate value
-			    		// * custom aggregates renderer assigns the value to our header container
-			    		menu: false,
-			    		renderer: function(value, align, height) {
-			    			return '<div class="numeric-value" style="height: 100%; float: right; margin-top: 4px; margin-right: 2px;"><span id="forecastcount" style="width: 100%; height: 100%;"/></div>';
-			    		},
-			    		aggregates: [{ 'value':
-		                    function (aggregatedValue, currentValue) {
-		                        if (currentValue) {
-		                            return aggregatedValue + currentValue;
-		                        }
-		                        return aggregatedValue;
-		                    }
-			    		}],
-			    		aggregatesrenderer: function (aggregates, column, element) {
-			    			$('#forecastcount').text($(aggregates)[0].value);
-			    			return '';
-		                }
-			    	},
+			    	{ text: 'Owner', datafield: 'owner', filterable: true, width: '12%', align: 'center', cellsalign: 'left' },
 			    	{ text: 'Current', columngroup: 'currentCounts', datafield: 'currentPageCount', filterable: false, width: '7%', align: 'center', classname: 'aggregate-cell-column-header', cellsalign: 'right',
 			    		// HACK to render aggregate value in the column header
 			    		// * column group hierarchy specifies the header cells
@@ -315,7 +307,6 @@ define([
 		   	    // column header hierarchy
 		   	    columngroups: [
 		            { text: 'Page Count', align: 'center', name: 'pageCounts' },
-		            { text: 'Forecast', align: 'center', name: 'forecastCounts', parentgroup: 'pageCounts' },
 		            { text: 'Current', align: 'center', name: 'currentCounts', parentgroup: 'pageCounts' },
 		            { text: 'Image Count', align: 'center', name: 'imageCounts' },
 		            { text: 'On Fig', align: 'center', name: 'onFigCounts', parentgroup: 'imageCounts' },

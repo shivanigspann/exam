@@ -12,8 +12,22 @@
 			"required": true
 		},
         "project": {
-            "type": "string",
-            "required": true
+            "type": "object",
+            "properties": {
+            	"id" : {
+		            "type": "number",
+		            "minimum": 1,
+					"required": true
+	            },
+            	"name" : {
+	            	"type": "string",
+	            	"required": true
+	            },
+            	"liveDate" : {
+	            	"type": "string",
+	            	"required": false
+	            }
+	        }
         },
         "date": {
             "type": "string"
@@ -34,10 +48,6 @@
         "shotCounts": {
             "type": "object",
             "properties": {
-                "pageForecast": {
-                   	"type": "number",
-                   	"minimum": 0
-                 },
                 "pageCurrent": {
                    	"type": "number",
                    	"minimum": 0

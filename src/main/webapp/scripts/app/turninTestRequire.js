@@ -6,6 +6,7 @@ require.config({
     	 * Third-party technology stack
     	 */
 		'jquery': '/ui-core/scripts/lib/jquery/jquery-1.11.0.min',
+		//'jquery': '/ui-core/scripts/lib/jquery/jquery-1.10.2.min',
 		'jqueryui': '/ui-core/scripts/lib/jquery-ui/jquery-ui-1.10.3.min',
 		'underscore': '/ui-core/scripts/lib/underscore-min',
 		'backbone': '/ui-core/scripts/lib/backbone-min',
@@ -20,6 +21,9 @@ require.config({
 		'backbonevalidation': '/ui-core/scripts/lib/backbone-validation-min',
 		'validationextension': '/ui-core/scripts/lib/extensions/validation/validation-extension',
 
+		/*
+		 * JQWidgets
+		 */
         'jqxcore': "/ui-core/scripts/lib/jqwidgets/jqxcore",
         'jqxdata': '/ui-core/scripts/lib/jqwidgets/jqxdata',
         'jqxscrollbar': '/ui-core/scripts/lib/jqwidgets/jqxscrollbar',
@@ -33,23 +37,6 @@ require.config({
         'jqxgridcolumnsresize': '/ui-core/scripts/lib/jqwidgets/jqxgrid.columnsresize',
         'jqxgridaggregates': '/ui-core/scripts/lib/jqwidgets/jqxgrid.aggregates',
         'jqxgridfilter': '/ui-core/scripts/lib/jqwidgets/jqxgrid.filter',
-
-		/*
-		 * JQWidgets
-        'jqxcore': "/ui-core/scripts/lib/jqwidgets-ver3.2.1/jqxcore",
-        'jqxdata': '/ui-core/scripts/lib/jqwidgets-ver3.2.1/jqxdata',
-        'jqxscrollbar': '/ui-core/scripts/lib/jqwidgets-ver3.2.1/jqxscrollbar',
-        'jqxbuttons': '/ui-core/scripts/lib/jqwidgets-ver3.2.1/jqxbuttons',
-        'jqxmenu': '/ui-core/scripts/lib/jqwidgets-ver3.2.1/jqxmenu',
-        'jqxdropdownlist': '/ui-core/scripts/lib/jqwidgets-ver3.2.1/jqxdropdownlist',
-        'jqxlistbox': '/ui-core/scripts/lib/jqwidgets-ver3.2.1/jqxlistbox',
-        'jqxexpander': '/ui-core/scripts/lib/jqwidgets-ver3.2.1/jqxexpander',
-        'jqxgrid': '/ui-core/scripts/lib/jqwidgets-ver3.2.1/jqxgrid',
-        'jqxgridselection': '/ui-core/scripts/lib/jqwidgets-ver3.2.1/jqxgrid.selection',
-        'jqxgridcolumnsresize': '/ui-core/scripts/lib/jqwidgets-ver3.2.1/jqxgrid.columnsresize',
-        'jqxgridaggregates': '/ui-core/scripts/lib/jqwidgets-ver3.2.1/jqxgrid.aggregates',
-        'jqxgridfilter': '/ui-core/scripts/lib/jqwidgets-ver3.2.1/jqxgrid.filter',
-		 */
 
         /*
          * UI Core components
@@ -83,7 +70,6 @@ require.config({
 		'api': 'app/turninAPI',
 		'meetingDashboardController': 'dashboard/controllers/dashboard',
 		'meetingDashboardView': 'dashboard/views/dashboardLayout',
-		//'meetingDashboardView': 'dashboard/views/gridItem',
 		'meetingHeaderView': 'dashboard/views/headerItem',
 		'meetingGridView': 'dashboard/views/gridItem',
 		'meetingModel': 'dashboard/models/meeting',
