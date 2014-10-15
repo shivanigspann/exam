@@ -43,25 +43,7 @@ require.config({
          */
 		'factory': '/ui-core/scripts/app/factory',
 		'resourceBundle': '/ui-core/scripts/abstract/bundle/resourceBundle',
-/*
 
-		'mediatorFormView': '/ui-core/scripts/abstract/formMediator/mediatorFormView',
-
-		'dialogView': '/ui-core/scripts/abstract/dialog/views/dialogView',
-		'dialogModel': '/ui-core/scripts/abstract/dialog/models/dialog',
-		'confirmationDialog': '/ui-core/scripts/abstract/dialog/views/confirmationDialog',
-
-		'navigationController': '/ui-core/scripts/abstract/navigation/controllers/navigationController',
-		'navigationModel': '/ui-core/scripts/abstract/navigation/models/navigation',
-		'navigationView': '/ui-core/scripts/abstract/navigation/views/navigationView',
-
-		'blurScreenView': '/ui-core/scripts/abstract/blurScreen/views/blurScreenView',
-
-		'applicationContext': '/ui-core/scripts/abstract/applicationContext/applicationContext',
-		'applicationContextModel': '/ui-core/scripts/abstract/applicationContext/models/applicationContextModel',
-
-		'jqueryUnslider': '/ui-core/scripts/lib/jquery-plugins/unslider',
-*/
 		/*
 		 * Application components
 		 */
@@ -72,8 +54,8 @@ require.config({
 		'meetingDashboardView': 'dashboard/views/dashboardLayout',
 		'meetingHeaderView': 'dashboard/views/headerItem',
 		'meetingGridView': 'dashboard/views/gridItem',
-		'meetingModel': 'dashboard/models/meeting',
-		'meetingList': 'dashboard/models/meetingList',
+		'meetingModel': 'models/meeting',
+		'meetingList': 'models/meetingList',
 
 		/*
 		 * Testing mocks

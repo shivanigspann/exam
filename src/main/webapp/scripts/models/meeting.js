@@ -2,7 +2,7 @@ define([
 	'backbone',
 	'factory',
 	'schema',
-	'json!dashboard/schema/meeting.json'
+	'json!../scripts/schema/meeting.json'
 ], function(
 	Backbone,
 	Factory,
