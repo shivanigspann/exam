@@ -70,18 +70,14 @@ define([
 				}
 				row.buyer = item.get('buyer');
 				row.assistantBuyer = item.get('assistantBuyer');
-				row.forecastPageCount = 0;
 				row.currentPageCount = 0;
 				row.onFigCount = 0;
 				row.flatCount = 0;
 				row.imageTeamCount = 0;
 				var counts = item.get('counts');
 				if (counts) {
-					if (counts.get('pageForecast')) {
-						row.forecastPageCount = counts.get('pageForecast');
-					}
-					if (counts.get('pageCurrent')) {
-						row.currentPageCount = counts.get('pageCurrent');
+					if (counts.get('pageCount')) {
+						row.currentPageCount = counts.get('pageCount');
 					}
 					if (counts.get('onFig')) {
 						row.onFigCount = counts.get('onFig');
@@ -156,7 +152,6 @@ define([
 			        { name: 'ownerName', type: 'string' },
 			        { name: 'buyer', type: 'string' },
 			        { name: 'assistantBuyer', type: 'string' },
-			        { name: 'forecastPageCount', type: 'int' },
 			        { name: 'currentPageCount', type: 'int' },
 			        { name: 'onFigCount', type: 'int' },
 			        { name: 'flatCount', type: 'int' },
@@ -287,7 +282,7 @@ define([
 			    			return '';
 		                }
 			    	},
-			    	{ text: 'ImgTeam', columngroup: 'imageTeamCounts', datafield: 'imageTeamCount', filterable: false, width: '7%', align: 'center', classname: 'aggregate-cell-column-header', cellsalign: 'right',
+			    	{ text: 'Img Team', columngroup: 'imageTeamCounts', datafield: 'imageTeamCount', filterable: false, width: '7%', align: 'center', classname: 'aggregate-cell-column-header', cellsalign: 'right',
 			    		// HACK to render aggregate value in the column header
 			    		// * column group hierarchy specifies the header cells
 			    		// * custom header renderer replaces the HTML with a container to hold the aggregate value
