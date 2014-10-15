@@ -9,11 +9,13 @@
     "name": "PRJ3784 #1",
     "date": "2014-09-30T11:30:00+04:00",
     "statusCode": "IN_PROGRESS",
-    "owner": "John Doe",
+    "owner": {
+    	"id": "yc12ab1",
+    	"name": "John Doe"
+    },
     "buyer": "Francesca Meladossi",
     "assistantBuyer": "Paula Jimenez",
-    "shotCounts": {
-	    "pageForecast": 63,
+    "counts": {
 	    "pageCurrent": 50,
 	    "onFig": 0,
 	    "flat": 0,
@@ -30,11 +32,13 @@
     "name": "PRJ3784 #2",
     "date": "2014-09-30T11:30:00+04:00",
     "statusCode": "IN_PROGRESS",
-    "owner": "John Doe",
+    "owner": {
+    	"id": "yc12ab1",
+    	"name": "John Doe"
+    },
     "buyer": "Francesca Meladossi",
     "assistantBuyer": "Paula Jimenez",
-    "shotCounts": {
-	    "pageForecast": 100,
+    "counts": {
 	    "pageCurrent": 80,
 	    "onFig": 0,
 	    "flat": 0,
@@ -51,11 +55,13 @@
     "name": "PRJ3785 #1",
     "date": "2014-09-30T11:30:00+04:00",
     "statusCode": "READY",
-    "owner": "John Doe",
+    "owner": {
+    	"id": "yc12ab1",
+    	"name": "John Doe"
+    },
     "buyer": "Francesca Meladossi",
     "assistantBuyer": "Paula Jimenez",
-    "shotCounts": {
-	    "pageForecast": 63,
+    "counts": {
 	    "pageCurrent": 63,
 	    "onFig": 0,
 	    "flat": 0,
@@ -72,11 +78,13 @@
     "name": "PRJ3785 #2",
     "date": "2014-09-30T11:30:00+04:00",
     "statusCode": "NEW",
-    "owner": "John Doe",
+    "owner": {
+    	"id": "yc12ab1",
+    	"name": "John Doe"
+    },
     "buyer": "Francesca Meladossi",
     "assistantBuyer": "Paula Jimenez",
-    "shotCounts": {
-	    "pageForecast": 76,
+    "counts": {
 	    "pageCurrent": 0,
 	    "onFig": 0,
 	    "flat": 0,
@@ -93,11 +101,13 @@
     "name": "PRJ3785 #3",
     "date": "2014-09-30T11:30:00+04:00",
     "statusCode": "NEW",
-    "owner": "John Doe",
+    "owner": {
+    	"id": "yc12ab1",
+    	"name": "John Doe"
+    },
     "buyer": "Francesca Meladossi",
     "assistantBuyer": "Paula Jimenez",
-    "shotCounts": {
-	    "pageForecast": 456,
+    "counts": {
 	    "pageCurrent": 0,
 	    "onFig": 0,
 	    "flat": 0,
@@ -114,11 +124,13 @@
     "name": "PRJ3785 #4",
     "date": "2014-09-30T11:30:00+04:00",
     "statusCode": "NEW",
-    "owner": "John Doe",
+    "owner": {
+    	"id": "yc12ab1",
+    	"name": "John Doe"
+    },
     "buyer": "Francesca Meladossi",
     "assistantBuyer": "Paula Jimenez",
-    "shotCounts": {
-	    "pageForecast": 76,
+    "counts": {
 	    "pageCurrent": 0,
 	    "onFig": 0,
 	    "flat": 0,
@@ -135,11 +147,13 @@
     "name": "PRJ3785 #5",
     "date": "2014-09-30T11:30:00+04:00",
     "statusCode": "IN_PROGRESS",
-    "owner": "John Doe",
+    "owner": {
+    	"id": "yc12ab1",
+    	"name": "John Doe"
+    },
     "buyer": "Francesca Meladossi",
     "assistantBuyer": "Paula Jimenez",
-    "shotCounts": {
-	    "pageForecast": 34,
+    "counts": {
 	    "pageCurrent": 50,
 	    "onFig": 0,
 	    "flat": 0,
@@ -156,11 +170,13 @@
     "name": "PRJ3785 #6",
     "date": "2014-09-30T11:30:00+04:00",
     "statusCode": "IN_PROGRESS",
-    "owner": "Jane Doe",
+    "owner": {
+    	"id": "yc12ab2",
+    	"name": "Jane Doe"
+    },
     "buyer": "Francesca Meladossi",
     "assistantBuyer": "Paula Jimenez",
-    "shotCounts": {
-	    "pageForecast": 100,
+    "counts": {
 	    "pageCurrent": 80,
 	    "onFig": 0,
 	    "flat": 0,
@@ -177,11 +193,13 @@
     "name": "PRJ3786 #1",
     "date": "2014-09-30T11:30:00+04:00",
     "statusCode": "CLOSED",
-    "owner": "Jane Doe",
+    "owner": {
+    	"id": "yc12ab2",
+    	"name": "Jane Doe"
+    },
     "buyer": "Francesca Meladossi",
     "assistantBuyer": "Paula Jimenez",
-    "shotCounts": {
-	    "pageForecast": 63,
+    "counts": {
 	    "pageCurrent": 63,
 	    "onFig": 0,
 	    "flat": 0,
@@ -198,11 +216,13 @@
     "name": "PRJ3786 #2",
     "date": "2014-09-30T11:30:00+04:00",
     "statusCode": "IN_PROGRESS",
-    "owner": "Jane Doe",
+    "owner": {
+    	"id": "yc12ab2",
+    	"name": "Jane Doe"
+    },
     "buyer": "Francesca Meladossi",
     "assistantBuyer": "Paula Jimenez",
-    "shotCounts": {
-	    "pageForecast": 63,
+    "counts": {
 	    "pageCurrent": 50,
 	    "onFig": 0,
 	    "flat": 0,
@@ -219,11 +239,13 @@
     "name": "PRJ3786 #3",
     "date": "2014-09-30T11:30:00+04:00",
     "statusCode": "IN_PROGRESS",
-    "owner": "Jane Doe",
+    "owner": {
+    	"id": "yc12ab2",
+    	"name": "Jane Doe"
+    },
     "buyer": "Francesca Meladossi",
     "assistantBuyer": "Paula Jimenez",
-    "shotCounts": {
-	    "pageForecast": 100,
+    "counts": {
 	    "pageCurrent": 80,
 	    "onFig": 0,
 	    "flat": 0,

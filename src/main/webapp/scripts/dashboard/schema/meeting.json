@@ -4,40 +4,46 @@
     "properties": {
     	"id": {
             "type": "number",
-            "minimum": 1,
-			"required": true
+            "minimum": 1
         },
 		"name": {
-			"type": "string",
-			"required": true
+			"type": "string"
 		},
         "project": {
             "type": "object",
             "properties": {
             	"id" : {
 		            "type": "number",
-		            "minimum": 1,
-					"required": true
+		            "minimum": 1
 	            },
             	"name" : {
-	            	"type": "string",
-	            	"required": true
+	            	"type": "string"
 	            },
             	"liveDate" : {
 	            	"type": "string",
-	            	"required": false
+		            "format" : "date-time"
 	            }
-	        }
+	        },
+	        "required": ["id", "name"]
         },
         "date": {
-            "type": "string"
+            "type": "string",
+            "format" : "date-time"
         },
 		"statusCode": {
-           	"enum": [ "NEW", "IN_PROGRESS", "READY", "CLOSED" ],
-           	"required": true
+           	"enum": [ "NEW", "IN_PROGRESS", "READY", "CLOSED" ]
 		},
         "owner": {
-            "type": "string"
+            "type": "object",
+            "properties": {
+            	"id":  {
+            		"type": "string"
+            	},
+            	"name": {
+            		"type": "string"
+            	}
+            },
+            "required": ["id"]
         },
         "buyer": {
             "type": "string"
@@ -45,26 +51,16 @@
         "assistantBuyer": {
             "type": "string"
         },
-        "shotCounts": {
+        "counts": {
             "type": "object",
-            "properties": {
-                "pageCurrent": {
-                   	"type": "number",
-                   	"minimum": 0
-                 },
-                "onFig": {
-                   	"type": "number",
-                   	"minimum": 0
-                 },
-                "flat": {
-                   	"type": "number",
-                   	"minimum": 0
-                 },
-                "imageTeam": {
+            "properties": {},
+            "patternProperties": {
+                "^(.)+$": {
                    	"type": "number",
                    	"minimum": 0
                  }
             }
-        }
+        },
+        "required": ["id", "name", "project", "date", "statusCode", "owner", "buyer"]
     }
 }

@@ -63,16 +63,35 @@ define([
 				}
 				row.date = item.get('date');
 				row.statusCode = item.get('statusCode');
-				row.owner = item.get('owner');
+				var owner = item.get('owner');
+				if (owner) {
+					row.ownerId = owner.get('id');
+					row.ownerName = owner.get('name');
+				}
 				row.buyer = item.get('buyer');
 				row.assistantBuyer = item.get('assistantBuyer');
-				var counts = item.get('shotCounts');
+				row.forecastPageCount = 0;
+				row.currentPageCount = 0;
+				row.onFigCount = 0;
+				row.flatCount = 0;
+				row.imageTeamCount = 0;
+				var counts = item.get('counts');
 				if (counts) {
-					row.forecastPageCount = counts.get('pageForecast');
-					row.currentPageCount = counts.get('pageCurrent');
-					row.onFigCount = counts.get('onFig');
-					row.flatCount = counts.get('flat');
-					row.imageTeamCount = counts.get('imageTeam');
+					if (counts.get('pageForecast')) {
+						row.forecastPageCount = counts.get('pageForecast');
+					}
+					if (counts.get('pageCurrent')) {
+						row.currentPageCount = counts.get('pageCurrent');
+					}
+					if (counts.get('onFig')) {
+						row.onFigCount = counts.get('onFig');
+					}
+					if (counts.get('flat')) {
+						row.flatCount = counts.get('flat');
+					}
+					if (counts.get('imageTeam')) {
+						row.imageTeamCount = counts.get('imageTeam');
+					}
 				}
 				row.model = item;
 		        rows.push(row);
@@ -133,7 +152,8 @@ define([
 			        { name: 'date', type: 'date' },  // , format: "yyyy-MM-ddTHH:mm:ss-HH:mm"
 			        { name: 'statusCode', type: 'statusCode' },
 			        { name: 'status', value: 'statusCode', values: { source: statusCodeDataAdapter.records, value: 'value', name: 'label' }},
-			        { name: 'owner', type: 'string' },
+			        { name: 'ownerId', type: 'string' },
+			        { name: 'ownerName', type: 'string' },
 			        { name: 'buyer', type: 'string' },
 			        { name: 'assistantBuyer', type: 'string' },
 			        { name: 'forecastPageCount', type: 'int' },
@@ -200,7 +220,7 @@ define([
 			    	{ text: 'Status', datafield: 'statusCode', displayfield: 'status', filterable: true, width: '6%', align: 'center', cellsalign: 'left' },
 			    	{ text: 'Buyer', datafield: 'buyer', filterable: true, width: '12%', align: 'center', cellsalign: 'left' },
 			    	{ text: 'Assistant Buyer', datafield: 'assistantBuyer', filterable: true, width: '12%', align: 'center', cellsalign: 'left' },
-			    	{ text: 'Owner', datafield: 'owner', filterable: true, width: '12%', align: 'center', cellsalign: 'left' },
+			    	{ text: 'Owner', datafield: 'ownerId', displayfield: 'ownerName', filterable: true, width: '12%', align: 'center', cellsalign: 'left' },
 			    	{ text: 'Current', columngroup: 'currentCounts', datafield: 'currentPageCount', filterable: false, width: '7%', align: 'center', classname: 'aggregate-cell-column-header', cellsalign: 'right',
 			    		// HACK to render aggregate value in the column header
 			    		// * column group hierarchy specifies the header cells
