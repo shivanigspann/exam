@@ -1,25 +1,32 @@
 {
+	"description": "Meeting information required for Photography Turn-in management",
 	"id": "meeting",
     "type": "object",
     "properties": {
     	"id": {
+    		"description": "The unique identifier of a meeting",
             "type": "number",
             "minimum": 1
         },
 		"name": {
+    		"description": "The name of a meeting",
 			"type": "string"
 		},
         "project": {
+    		"description": "The unique identifier of a project assigned to a meeting",
             "type": "object",
             "properties": {
             	"id" : {
+    		"description": "The unique identifier of a project",
 		            "type": "number",
 		            "minimum": 1
 	            },
             	"name" : {
+		    		"description": "The name of a project",
 	            	"type": "string"
 	            },
             	"liveDate" : {
+		    		"description": "The go-live date of a project",
 	            	"type": "string",
 		            "format" : "date-time"
 	            }
@@ -27,31 +34,39 @@
 	        "required": ["id", "name"]
         },
         "date": {
+    		"description": "The scheduled date of a meeting",
             "type": "string",
             "format" : "date-time"
         },
 		"statusCode": {
+    		"description": "The status of a meeting",
            	"enum": [ "NEW", "IN_PROGRESS", "READY", "CLOSED" ]
 		},
         "owner": {
+    		"description": "The owner of a meeting (this is the user who created the meeting)",
             "type": "object",
             "properties": {
             	"id":  {
+		    		"description": "The identifier of a user who created a meeting",
             		"type": "string"
             	},
             	"name": {
+		    		"description": "The name (first + last) of a user who created a meeting",
             		"type": "string"
             	}
             },
             "required": ["id"]
         },
         "buyer": {
+    		"description": "The name of the buyer assigned to a meeting",
             "type": "string"
         },
         "assistantBuyer": {
+    		"description": "The name of the assistant buyer assigned to a meeting",
             "type": "string"
         },
         "counts": {
+    		"description": "A set of counters providing analytics for a meeting; each entry is a key/value pair",
             "type": "object",
             "properties": {},
             "patternProperties": {
