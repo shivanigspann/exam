@@ -1,6 +1,6 @@
 define([
 	'marionette',
-	'text!../scripts/dashboard/templates/grid.handlebars',
+	'text!/turnin-ui/scripts/dashboard/templates/grid.handlebars',
 	'jquery',
 	'jqxcore',
 	'jqxdata',

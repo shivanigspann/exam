@@ -1,5 +1,5 @@
 require.config({
-	'baseUrl': 'scripts/',
+	'baseUrl': '/turnin-ui/scripts/',
 	
     'paths': {
     	/*
@@ -288,7 +288,7 @@ require([
 
 		// load resource bundles
 		ResourceBundle.getBundle({ 
-			name: ['/ui-core/scripts/bundle/Messages', 'scripts/messages/turninMessages'], 
+			name: ['/ui-core/scripts/bundle/Messages', '/turnin-ui/scripts/messages/turninMessages'], 
 			mode: 'both', 
 			cache: true 
 		});
