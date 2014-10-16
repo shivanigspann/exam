@@ -10,6 +10,20 @@
 	<dependencies>
 	</dependencies>
 
+	<distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Stella CI releases</name>
+            <url>http://mdc3vr1001:8081/nexus/content/repositories/stellaCIreleases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Stella CI Snapshots</name>
+            <url>http://mdc3vr1001:8081/nexus/content/repositories/stellaCIsnapshots</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
 	<build>
 		<finalName>turnin-ui</finalName>
 
