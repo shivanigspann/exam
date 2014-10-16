@@ -1,6 +1,6 @@
 define([
 	'marionette',
-	'text!../scripts/dashboard/templates/dashboard.handlebars',
+	'text!/turnin-ui/scripts/dashboard/templates/dashboard.handlebars',
 	'meetingHeaderView',
 	'meetingGridView'
 ], function(

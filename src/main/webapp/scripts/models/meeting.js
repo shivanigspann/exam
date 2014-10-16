@@ -2,7 +2,7 @@ define([
 	'backbone',
 	'factory',
 	'schema',
-	'json!../scripts/schema/meeting.json'
+	'json!/turnin-ui/scripts/schema/meeting.json'
 ], function(
 	Backbone,
 	Factory,

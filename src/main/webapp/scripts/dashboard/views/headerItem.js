@@ -1,6 +1,6 @@
 define([
 	'marionette',
-	'text!../scripts/dashboard/templates/header.handlebars',
+	'text!/turnin-ui/scripts/dashboard/templates/header.handlebars',
 ], function(
 	Marionette,
 	HeaderTemplate
