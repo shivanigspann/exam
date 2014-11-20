@@ -30,6 +30,7 @@ public class loginTest extends baseSetUpTest{
 		System.out.println("Hello end");
 		assertTrue(ip.verifyCompose(),"compose is not clicked");
 		System.out.println("Hello End Assertion");
+		System.out.println("To Test in Git");
 	}
 	@AfterMethod
 	public void closeBrowser(){
