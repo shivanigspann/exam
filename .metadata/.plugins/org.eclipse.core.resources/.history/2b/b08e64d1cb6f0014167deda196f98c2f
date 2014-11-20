@@ -1,0 +1,23 @@
+package inboxpage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class InboxPage {
+	WebDriver driver=new FirefoxDriver();
+	private By compose=By.linkText("COMPOSE");
+	private By to=By.linkText("To");
+	
+	public InboxPage clickComposeEmail(){
+		driver.findElement(compose).click();
+		return this;
+	}
+	
+	public boolean verifyCompose(){
+		WebElement we=driver.findElement(to);
+		
+		return we.isDisplayed();
+	}
+}

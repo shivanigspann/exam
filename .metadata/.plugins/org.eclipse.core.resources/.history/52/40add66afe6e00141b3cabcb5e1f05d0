@@ -1,0 +1,47 @@
+package practicetestng;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.*;
+
+import com.beust.jcommander.Parameter;
+
+
+public class practiceWithoutSuiteTest {
+
+	WebDriver driver;
+
+	@BeforeMethod
+
+	public void setUp(){
+		
+		driver=new FirefoxDriver();
+		
+	}
+
+	@Test
+	public void testGmail() throws InterruptedException{
+		driver.get("http://www.gmail.com");
+		driver.findElement(By.id("Email")).sendKeys("shivani17185");
+		driver.findElement(By.id("Passwd")).sendKeys("123shivirocks_");
+		driver.findElement(By.id("signIn")).click();
+		Thread.sleep(1000);
+	}
+	@Test
+	public void testFacebook() throws InterruptedException{
+		
+		driver.get("http://www.yahoo.com");
+		driver.findElement(By.linkText("Sign In")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.id("username")).sendKeys("shivani.gupta171@yahoo.com");
+		driver.findElement(By.id("passwd")).sendKeys("rahul_123");
+		driver.findElement(By.id(".save")).click();
+	}
+
+	@AfterMethod
+	public void tearDown(){
+		driver.quit();
+	}	
+}

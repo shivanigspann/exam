@@ -1,0 +1,36 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.*;
+
+
+public class practiceTest {
+
+	WebDriver driver;
+	
+	@BeforeMethod
+public void setUp(){
+		driver=new FirefoxDriver();
+	}
+	
+	@Test
+	public void testGmail(){
+		driver.get("http://www.gmail.com");
+		driver.findElement(By.id("Email")).sendKeys("shivani17185");
+		driver.findElement(By.id("Passwd")).sendKeys("123shivirocks_");
+		driver.findElement(By.id("signIn")).click();
+	}
+	/*@Test
+	public void testFacebook(){
+		driver.get("http://www.facebook.com");
+		driver.findElement(By.id("Email")).sendKeys("shivani17185");
+		driver.findElement(By.id("Passwd")).sendKeys("123shivirocks_");
+		driver.findElement(By.id("signIn")).click();
+	}*/
+	
+	@AfterMethod
+	public void tearDown(){
+			driver.quit();
+		}	
+	}

@@ -1,0 +1,26 @@
+package page;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class loginPage {
+	WebDriver driver=new FirefoxDriver();
+	private By email=By.id("Email");
+	private By passwd=By.id("Passwd");
+	private By signIn=By.id("signIn");
+	
+	public loginPage(){
+		driver.get("http://www.gmail.com");
+		}
+	public void enterUserName(String userName){
+			driver.findElement(email).sendKeys(userName);
+	}
+	public void enterPassword(String password){
+			driver.findElement(passwd).sendKeys(password);
+	}
+	public void clickLoginButton() throws InterruptedException{
+			driver.findElement(signIn).click();
+			Thread.sleep(1000);
+	}
+}

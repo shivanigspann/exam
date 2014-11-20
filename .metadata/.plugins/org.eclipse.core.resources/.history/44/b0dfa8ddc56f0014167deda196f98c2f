@@ -1,0 +1,18 @@
+package test;
+
+import page.*;
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+public class loginTest {
+	loginPage lp=new loginPage();
+
+
+
+	@Test
+	public void testGmail() throws InterruptedException{
+		lp.enterUserName("shivani17185");
+		lp.enterPassword("123shivirocks_");
+		lp.clickLoginButton();
+	}
+}

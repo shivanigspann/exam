@@ -1,0 +1,5 @@
+<suite name='my suite'>
+<classes>
+<class name='practiceTest'/>
+</classes>
+</suite>

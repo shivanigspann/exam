@@ -1,0 +1,167 @@
+package test;
+import static org.junit.Assert.*;
+
+import java.util.Set;
+
+import org.junit.*;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+
+
+
+public class GoogleTest {
+	WebDriver driver;
+	@Before
+	public void setUpImpl(){
+		driver = new FirefoxDriver();
+	}
+
+	@Test
+	public void testOpenGoogleUrl() throws Exception{
+		WebDriver driver = new FirefoxDriver();
+
+		driver.get("http://www.gmail.com");
+		driver.findElement(By.id("Email")).sendKeys("shivani17185");
+		driver.findElement(By.id("Passwd")).sendKeys("123shivirocks_");
+		driver.findElement(By.id("signIn")).click();
+		Thread.sleep(10000);
+
+	}
+	@Test
+	public void testOpenMacys() throws Exception{
+		WebDriver driver = new FirefoxDriver();
+		Actions action = new Actions(driver);
+
+		driver.get("http://www.macys.com");
+		WebElement closeButton = driver.findElement(By.xpath("//div[@id='top']/a"));
+		if(closeButton.isDisplayed())
+		{
+			closeButton.click();
+		}
+		// WebElement we=driver.findElement(By.xpath("//a[@href='/catalog/index.ognc?CategoryID=1&cm_sp=intl_hdr-_-men-_-1_men']"));
+		WebElement we = driver.findElement(By.linkText("MEN"));
+		action.moveToElement(we).build().perform();
+		// Thread.sleep(1000);
+
+		//driver.manage().timeouts().implicitlyWait(arg0, arg1)  
+		//  driver.findElement(By.xpath("//a[@href='/catalog/index.ognc?CategoryID=11221&cm_sp=intl_hdr-_-men-_-11221_jeans']")).click();
+		// WebElement item=
+		driver.findElement(By.linkText("Jeans")).click();
+		/*if(item.isDisplayed()){
+	  item.click();
+	  Thread.sleep(10000);
+	  String category=driver.findElement(By.xpath("//*[@id='currentCatNavHeading']")).getText();
+	  assertEquals("Expected Page is not displayed","Jeans",category);
+      }*/
+
+	}
+
+	@Test
+	public void testOpenIrctcUrl() throws Exception{
+		String dateOfJourney="25";
+		String monthOfJourney="November";
+
+		String destinationString="Jaipur";
+		String destID="JAI";
+		String originString="New Delhi";
+		String originID="DEL";
+
+
+		driver.get("https://www.irctc.co.in");
+		driver.findElement(By.linkText("Flights")).click();
+		Thread.sleep(10000);   
+		Set<String> allWin=driver.getWindowHandles();
+		for(String s:allWin){
+			if(driver.switchTo().window(s).getTitle().equals("IRCTC Online Passenger Reservation System"))
+				break;
+		}
+		System.out.println("Window "+driver.getTitle());
+		Thread.sleep(5000);
+//Origin
+		driver.findElement(By.id("origin")).sendKeys(originID);
+		Thread.sleep(5000);
+		Actions builder=new Actions(driver);
+		builder.keyDown(Keys.TAB).keyUp(Keys.UP).build().perform();
+		
+		driver.findElement(By.xpath("//div[@id='plannerBody']/following::ul[1]/li[1]")).click();
+		Thread.sleep(5000);
+//origin End
+	
+		driver.findElement(By.id("destination")).sendKeys(destinationString);
+		Thread.sleep(5000);
+		
+		builder.keyDown(Keys.TAB).keyUp(Keys.UP).build().perform();
+	
+		driver.findElement(By.xpath("//div[@id='plannerBody']/following::ul[2]/li[1]")).click();
+
+
+		WebElement we=driver.findElement(By.xpath("//input[@id='departDateInt']/following::img[1]"));
+		Thread.sleep(5000);
+		if(we.isDisplayed()){
+			System.out.println("Hello1");
+			we.click();
+		}
+		Thread.sleep(5000);
+		String side="right";
+		String month=driver.findElement(By.xpath(".//*[@id='ui-datepicker-div']/div[1]/div/div/span[1]")).getText();
+		if(month.equals(monthOfJourney))	{
+			side="left";}
+		else
+			month=driver.findElement(By.xpath(".//*[@id='ui-datepicker-div']/div[2]/div/div/span[1]")).getText();
+		if(month.equals(monthOfJourney))		{
+			side="right";
+		}
+		else		{
+			do			{
+				driver.findElement(By.xpath("//span[@class='ui-icon ui-icon-circle-triangle-e']")).click();
+				month=driver.findElement(By.xpath(".//*[@id='ui-datepicker-div']/div[2]/div/div/span[1]")).getText();
+			}while(month.equals(monthOfJourney));
+		}
+
+		driver.findElement(By.xpath("//div[@class='ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-"+side+"']/following::table/tbody/tr/td//a[contains(text(),'"+dateOfJourney+"')]")).click();
+
+	}
+	@Test
+	public void testPractice()throws Exception{
+		String dateOfJourney="25";
+		String monthOfJourney="November";
+
+		String destinationString="Jaipur";
+		String destID="JAI";
+		String originString="New Delhi";
+		String originID="DEL";
+
+
+		driver.get("https://www.irctc.co.in");
+		driver.findElement(By.linkText("Flights")).click();
+		Thread.sleep(10000);   
+		Set<String> allWin=driver.getWindowHandles();
+		for(String s:allWin){
+			if(driver.switchTo().window(s).getTitle().equals("IRCTC Online Passenger Reservation System"))
+				break;
+		}
+		System.out.println("Window "+driver.getTitle());
+		Thread.sleep(5000);
+
+		driver.findElement(By.id("origin")).sendKeys(originID);
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//div[@id='plannerBody']/following::ul[1]/li[1]")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.id("destination")).sendKeys(destinationString);
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//div[@id='plannerBody']/following::ul[2]/li[1]")).click();
+
+		Actions builder=new Actions(driver);
+		builder.keyDown(Keys.SHIFT).perform();
+	}
+	@After
+	public void tearDown(){
+		driver.quit();
+	}
+
+}

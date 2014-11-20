@@ -1,0 +1,10 @@
+<suite name='my suite'>
+<test name='regression'>
+<packages>
+      <package name='practicetestng' />
+    </packages>
+<classes>
+<class name='practiceTest'/>
+</classes>
+</test>
+</suite>

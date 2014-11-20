@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name='my suite'>
+	<test name='regression'>
+		<parameter name="browser" value=""/> 
+		<packages>
+			<package name='practicetestng' />
+		</packages>
+		<classes>
+			<class name='practicetestng.practiceTest' />
+		</classes>
+	</test>
+</suite>

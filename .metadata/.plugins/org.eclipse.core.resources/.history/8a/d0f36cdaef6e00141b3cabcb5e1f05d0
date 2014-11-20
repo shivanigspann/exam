@@ -1,0 +1,7 @@
+<suite name='my suite'>
+<test name='regression'>
+<classes>
+<class name='practiceTest'/>
+</classes>
+</test>
+</suite>

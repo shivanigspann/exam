@@ -1,0 +1,43 @@
+package page;
+
+import inboxpage.InboxPage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class loginPage {
+	WebDriver driver=new FirefoxDriver();
+	private By email=By.id("Email");
+	private By passwd=By.id("Passwd");
+	private By signIn=By.id("signIn");
+	
+	public loginPage(){
+		driver.get("http://www.gmail.com");
+		}
+	public void enterUserName(String userName){
+		System.out.println("Hello2");
+			driver.findElement(email).sendKeys(userName);
+			System.out.println("Hello3");
+	}
+	public void enterPassword(String password){
+		System.out.println("Hello4");
+			driver.findElement(passwd).sendKeys(password);
+			System.out.println("Hello5");
+	}
+	public InboxPage clickLoginButton() throws InterruptedException{
+		System.out.println("Hello6");
+			driver.findElement(signIn).click();
+			System.out.println("Hello7");
+			WebElement myDynamicElement = (new WebDriverWait(driver, 10))
+					  .until(ExpectedConditions.presenceOfElementLocated(By.linkText("COMPOSE")));
+			Thread.sleep(1000);
+			System.out.println("Hello8");
+			return new InboxPage();
+	}
+
+
+}
